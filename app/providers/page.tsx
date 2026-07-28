@@ -1,3 +1,9 @@
-import type{Metadata}from"next";import{providers}from"../../lib/providers";
-export const metadata:Metadata={title:"成人向け動画ASP・SDK対応一覧",description:"FANZA、MGS、DUGA/APEX、DTI CASH、FC2、DLsite、Gyutto等を安全に横断比較する接続方針。",alternates:{canonical:"/providers"}};
-export default function Page(){return <><nav className="policyNav"><a href="/">トップ</a><a href="/policies/editorial">編集方針</a></nav><article className="policyShell"><p className="eyebrow">PROVIDER DIRECTORY</p><h1>ASP・SDK対応一覧</h1><p><strong>結論：</strong>公式に許可されたAPI、SDK、フィード、成果リンクだけを使用し、認証情報はサーバー限定、取得元は作品ごとに表示します。</p>{providers.map(p=><section key={p.id}><h2>{p.name}｜{p.program}</h2><p>{p.mode.toUpperCase()}方式。{p.notes}</p><p><a href={p.source} rel="nofollow noopener" target="_blank">公式・確認先 →</a></p></section>)}<h2>網羅性の維持</h2><p>新規ASPは共通アダプターへ追加します。スクレイピングは行わず、利用条件、キャッシュ、画像、再配布、成果リンクの規約を確認してから有効化します。</p><h2>横断比較の差別化</h2><p>同一作品候補をまとめても、価格・配信状態・取得時刻は提供元ごとに保持します。報酬率をランキングへ入れず、UGCと本人選択タグの一致理由を別表示します。</p></article></>}
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "掲載サービス一覧", description: "作品を比較できる公式サービスと、情報確認の方針をご案内します。", alternates: { canonical: "/providers" } };
+
+const services = ["FANZA", "DUGA", "MGS動画", "DTI CASH提携サイト", "FC2コンテンツマーケット", "Fantia", "DLsite", "Gyutto"];
+
+export default function Page() {
+  return <><nav className="policyNav"><a href="/">トップ</a><a href="/policies/editorial">編集方針</a></nav><article className="policyShell"><p className="eyebrow">掲載サービス</p><h1>比較できる公式サービス</h1><p>各サービスが認めた方法で確認できる情報だけを掲載し、作品ごとに情報の出どころを明示します。</p>{services.map(name => <section key={name}><h2>{name}</h2><p>価格、配信状況、公開日などを公式サイトで確認し、比較しやすい形でご案内します。</p></section>)}<h2>情報の確認方針</h2><p>利用条件を確認し、掲載が認められた情報だけを扱います。価格や配信状況は変わることがあるため、購入前に公式サイトで再確認してください。</p><h2>公平な比較</h2><p>同じ作品が複数のサービスにある場合も、価格、配信状況、確認日時を分けて表示します。広告報酬額はランキングに使いません。</p></article></>;
+}
