@@ -6,9 +6,12 @@ export const reviews = sqliteTable("reviews", {
   body: text("body").notNull(),
   rating: integer("rating").notNull(),
   helpfulAxis: text("helpful_axis").notNull(),
+  ageBand: text("age_band").notNull().default("回答しない"),
+  bestFor: text("best_for").notNull().default("その他"),
+  containsSpoiler: integer("contains_spoiler", { mode: "boolean" }).notNull().default(false),
   status: text("status").notNull().default("pending"),
   reportCount: integer("report_count").notNull().default(0),
-  policyVersion: text("policy_version").notNull().default("2026-07-15"),
+  policyVersion: text("policy_version").notNull().default("2026-07-28"),
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
   reviewedAt: integer("reviewed_at", { mode: "timestamp" }),
 });

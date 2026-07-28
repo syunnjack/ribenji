@@ -30,7 +30,7 @@ export function SiteClient() {
     <ProductExplorer />
     <GuideCards />
     <UgcForm />
-    <div className="notice">PR・広告を含みます　｜　最終更新 2026.07.15　｜　掲載情報は各公式サイトで確認しています</div>
+    <div className="notice">PR・広告を含みます　｜　最終更新 2026.07.28　｜　掲載情報は各公式サイトで確認しています</div>
     <header><a className="logo" href="#top">FANZA <i>GUIDE LAB</i></a><nav><a href="#find">見つける</a><a href="#method">選び方の基準</a><a href="#voices">みんなの声</a><a href="#products">作品を探す</a></nav></header>
     <section className="hero" id="top"><div><p className="eyebrow">納得できる作品選び</p><h1>作品選びを、<br /><em>透明</em>に。</h1><p className="lead">広告だから推す、を終わらせる。情報の出どころ・更新日・選ぶ基準・利用者の声を分けて示す、比較と発見のガイドです。</p><div className="actions"><a className="primary" href="#find">自分に合う探し方を見る</a><a href="#method">選び方の基準を見る →</a></div></div><aside><span>私たちの約束</span><strong>報酬額だけで<br />順位を決めません。</strong><p>公式情報と利用者の感想を分け、広告リンクには明確な表示を付けます。</p></aside></section>
     <section className="section" id="find"><div className="sectionHead"><p className="eyebrow">今日の選び方</p><h2>まず、選ぶ基準をつくる。</h2><p>作品名を並べる前に、何を重視するかを決めます。</p></div><div className="cards">{picks.map(p => <article className="card" key={p.rank}><span className="rank">{p.rank}</span><b>{p.tag}</b><h3>{p.title}</h3><p>{p.copy}</p><footer>{p.score}<a href="#products" aria-label={`${p.title}で探す`}>→</a></footer></article>)}</div><p className="affiliate">リンク先で購入が成立した場合、当サイトが報酬を受け取ることがあります。価格・配信状況は必ず公式サイトでご確認ください。</p></section>
