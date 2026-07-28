@@ -29,7 +29,7 @@ export async function GET(request: Request) {
   try {
     const response = await fetch(`${ENDPOINT}?${params}`, {
       headers: { Accept: "application/json" },
-      next: { revalidate: 1800 },
+      cache: "no-store",
     });
     if (!response.ok) return Response.json({ error: "Upstream API request failed." }, { status: 502 });
     const payload = await response.json() as { result?: { items?: unknown[]; total_count?: number } };
